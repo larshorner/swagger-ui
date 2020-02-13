@@ -214,7 +214,8 @@ export default class OperationContainer extends PureComponent {
       displayRequestDuration,
       isDeepLinkingEnabled,
       executeInProgress: this.state.executeInProgress,
-      tryItOutEnabled: this.state.tryItOutEnabled
+      tryItOutEnabled: this.state.tryItOutEnabled,
+      badges: unresolvedOp.getIn(["operation", "badges"]) || ""
     })
 
     return (
