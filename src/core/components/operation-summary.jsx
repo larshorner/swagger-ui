@@ -20,7 +20,8 @@ export default class OperationSummary extends PureComponent {
   static defaultProps = {
     operationProps: null,
     specPath: List(),
-    summary: ""
+    summary: "",
+    badges: List()
   }
 
   render() {
@@ -43,6 +44,7 @@ export default class OperationSummary extends PureComponent {
       operationId,
       originalOperationId,
       displayOperationId,
+      badges
     } = operationProps.toJS()
 
     let {
@@ -56,11 +58,22 @@ export default class OperationSummary extends PureComponent {
     const OperationSummaryPath = getComponent("OperationSummaryPath")
     const JumpToPath = getComponent("JumpToPath", true)
 
+      let table = []
+      let badgeCount = badges.length
+      for(let i = 0; i < badgeCount; i++){
+        table.push(<div className={`opblock-badge opblock-badge-${badges[i].color}`}>
+            {toString(badges[i].text)}
+          </div>
+        )
+      }
+
     return (
 
       <div className={`opblock-summary opblock-summary-${method}`} onClick={toggleShown} >
         <OperationSummaryMethod method={method} />
         <OperationSummaryPath getComponent={getComponent} operationProps={operationProps} specPath={specPath} />
+
+        {table}
 
         {!showSummary ? null :
           <div className="opblock-summary-description">

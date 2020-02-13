@@ -310,7 +310,38 @@
         font-size: 14px;
     }
 
-    .opblock-summary-description
+    .opblock-badge
+    {
+      font-size: 10px;
+      min-width: 25px;
+      padding: 3px 6px;
+      text-align: center;
+      border-radius: 3px;
+      text-shadow: 0 1px 0 rgba(0,0,0,.1);
+      font-family: sans-serif;
+      color: #fff;
+      margin-right: 8px;
+      background: #8492A4;
+    }
+
+    .opblock-badge-red {
+      background: #f93e3e;
+    }
+
+    .opblock-badge-blue {
+      background: #61affe;
+    }
+
+    .opblock-badge-green {
+      background: #49cc90;
+    }
+
+    .opblock-badge-orange {
+      background: #fca130;
+    }
+
+
+  .opblock-summary-description
     {
         font-size: 13px;
 
